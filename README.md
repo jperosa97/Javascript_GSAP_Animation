@@ -1,0 +1,11 @@
+# JAVASCRIPT GSAP ANIMATION
+
+
+# Programmiersprache
+
+ - HTML & CSS 
+ - JAVASCRIPT 
+
+# FRAMEWORK 
+
+- JAVASCRIPT GSAP
