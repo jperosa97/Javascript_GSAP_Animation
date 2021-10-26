@@ -1,0 +1,79 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  margin: 0;
+  padding: 0; }
+
+/*Logo der Nintendo Switch*/
+.nintendo {
+  position: absolute;
+  z-index: 5;
+  align-items: center;
+  top: 8em;
+  left: -9%;
+  opacity: 0; }
+
+.nintendo-switch {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  height: 150px; }
+  .nintendo-switch .left, .nintendo-switch .right {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    width: 55px;
+    border: 8px solid #ffffff;
+    box-sizing: border-box; }
+  .nintendo-switch .left {
+    position: relative;
+    border-radius: 20px 0 0 20px;
+    margin-top: 0; }
+    .nintendo-switch .left:before {
+      position: absolute;
+      content: "";
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #ffffff; }
+  .nintendo-switch .right {
+    position: relative;
+    background: #ffffff;
+    border-radius: 0 20px 20px 0; }
+    .nintendo-switch .right:before {
+      position: absolute;
+      content: "";
+      top: 70px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #E60012; }
+
+.nintendo h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-top: -20%;
+  z-index: 5;
+  left: -20%; }
+
+.nintendo h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 30px;
+  position: absolute;
+  font-weight: 600;
+  letter-spacing: 10px;
+  margin-top: -7%;
+  left: -20%;
+  z-index: 5;
+  color: #ffffff;
+  text-transform: uppercase; }
+
+/*# sourceMappingURL=logo.css.map */

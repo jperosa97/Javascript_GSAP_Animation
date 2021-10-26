@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/logo.css">
+    <title>Nintendo_Banner_Animation</title>
+</head>
+<body>
+    <!--Farbbalken der Anfangs Animation-->
+	<div class="rect rect--red"></div>
+	<div class="rect rect--orange"></div>
+	<div class="rect rect--violet"></div>
+
+	<!--Nintendio switch console aufbau-->
+    <div class="n-switch">
+		<div class="n-switch__wrapper">
+			<div class="joycon joycon--left">
+				<div class="btn-select"></div>
+				<div class="stick stick--left"></div>
+				<div class="pad pad--left">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="btn-photo"></div>
+			</div>
+			<div class="joycon joycon--right">
+				<div class="btn-start"></div>
+				<div class="stick stick--right"></div>
+				<div class="pad pad--right">
+					<span>X</span>
+					<span>A</span>
+					<span>B</span>
+					<span>Y</span>
+				</div>
+				<div class="btn-home"></div>
+			</div>
+			<div class="screen">
+				<div class="screen__wrapper"></div>	
+			</div>	
+		</div>
+	</div>
+
+	<!--Nintendo Switch Logo-->
+    <div class="nintendo">
+            <div class="nintendo-switch">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>    
+            <h1>Nintendo</h1>
+            <h2>Switch</h2>
+    </div>
+
+	<!--Nintendo Switch Spiele mit Informationen-->
+	<div class="card middle1">
+        <div class="front">
+            <img class="movie"src="./img/SmashBros.jpg" alt="Super Smash Bros">
+        </div>
+        <div class="back">
+            <div class="back-content middle">
+                <h2>Super Smash Bros Ultimate</h2>
+                <br>
+                <p>Alle Kämpfer in der Geschichte der Super Smash Bros. 
+                Serie treffen hier aufeinander! Doch auch neue Herausforderer steigen in den Ring, 
+                darunter der Inkling aus der Splatoon-Reihe, Ridley aus der Metroid-Reihe, 
+                Simon Belmont aus Castlevania und Melinda aus der Animal Crossing-Reihe! 
+                </p> 
+                <a href="https://www.nintendo.ch/de/Spiele/Nintendo-Switch/Super-Smash-Bros-Ultimate-1395713.html">Mehr erfahren</a>
+            </div>
+        </div>
+    </div>
+    <div class="card2 middle2">
+            <div class="front">
+                <img class="movie2"src="./img/luigi.jpg" alt="Luigi's Mansion 3">
+            </div>
+            <div class="back">
+                <div class="back-content2 middle">
+                    <h2>Luigi Manson 3</h2>
+                    <br>
+                    <p>Luigi wird mit Mario und seinen Freunden in ein schickes Luxushotel eingeladen
+                        wer kann da schon Nein sagen? Doch nach ihrer Anreise nimmt der Traumurlaub eine schaurige Wendung: 
+                        Überall treiben Geister ihr Unwesen und Seine Schaurigkeit, König Buu Huu, sperrt Mario und die anderen in Gemälden ein!
+                    </p>
+                    <a href="https://www.nintendo.ch/de/Spiele/Nintendo-Switch/Luigi-s-Mansion-3-1437312.html">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+        <div class="card3 middle3">
+                <div class="front">
+                    <img class="movie3"src="./img/zelda.jpg" alt="Zelda">
+                </div>
+                <div class="back">
+                    <div class="back-content3 middle">
+                        <h2>Zelda Link's Awakening</h2>
+                        <br>
+                        <p>Hilf Link bei der Flucht von einer seltsamen Insel für Nintendo Switch. Während des Abenteuers triffst du auf schillernde Charaktere, 
+                            bekämpfst jede Menge Monster und erkundest gefährliche Verliese. 
+                            Erlebe ein klassisches Abenteuer in einem neuen, charmanten Gewand! 
+                        </p>
+                        <a href="https://www.nintendo.ch/de/Spiele/Nintendo-Switch/The-Legend-of-Zelda-Link-s-Awakening-1514327.html">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div> 
+       </div>
+    </div>
+
+	<!--Gsap Libary und die Javascript Datei-->
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
+	<script src="./Animation_JS/animation.js"></script>
+</body>
+</html>

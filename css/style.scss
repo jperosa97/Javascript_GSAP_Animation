@@ -1,0 +1,506 @@
+$colorWhite: #ffffff;
+$colorBlack: #292929;
+$colorViolet: #8D38B2;
+$colorBlue: #0dcaff;
+$colorOrange: #F1A830;
+$colorRed: #E60012;
+
+*,
+::before,
+::after {
+box-sizing: border-box;
+-webkit-user-drag: none;
+margin: 0;
+padding: 0;
+}
+
+html,
+body {
+width: 100%;
+height: 90%;
+overflow: hidden;
+}
+
+body {
+background-color: $colorWhite;
+}
+
+a {
+color: $colorWhite;
+text-decoration: none;
+}
+
+.rect {
+position: absolute;
+width: 100%;
+height: 65%;
+transform: translate3d(0, 100%, 0);
+-webkit-backface-visibility: hidden;
+-webkit-perspective: 1000;
+&--violet {
+background-color: $colorViolet;
+z-index: 1;
+opacity: 0;
+}
+&--orange {
+background-color: $colorOrange;
+z-index: 2;
+opacity: 0;
+}
+&--red {
+background-color: $colorRed;
+z-index: 3;
+opacity: 0;
+height: 70%;
+}
+}
+
+.n-switch {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 450px;
+height: 190px;
+opacity: 0;
+transform: translate(-50%, -50%);
+z-index: 5;
+}
+
+.n-switch__wrapper {
+position: relative;
+display: inline-block;
+width: 100%;
+height: 100%;
+}
+
+/*Joycons*/
+
+.joycon {
+position: absolute;
+width: 60px;
+height: 100%;
+margin-top:-400px;
+opacity: 0;
+&--left {
+left: 0;
+border-top-left-radius: 40px;
+border-bottom-left-radius: 40px;
+background-color: $colorViolet;
+}
+&--right {
+right: 0;
+border-top-right-radius: 40px;
+border-bottom-right-radius: 40px;
+background-color: $colorOrange;
+}
+}
+
+/* Stick*/
+
+.stick {
+position: absolute;
+width: 28px;
+height: 28px;
+left: 50%;
+background-color: #1b1b1b;
+border: 3px solid #101010;
+border-radius: 50%;
+transform: translate(-50%, 0);
+&--left {
+top: 40px;
+margin-left: 2px;
+}
+&--right {
+bottom: 75px;
+margin-left: -2px;
+}
+}
+
+/*Pad*/
+
+.pad {
+position: absolute;
+width: 42px;
+height: 42px;
+left: 12px;
+&--left {
+top: 80px;
+span {
+&::before {
+position: absolute;
+top: 50%;
+left: 50%;
+font-size: 5px;
+color: #383838;
+transform: translate(-50%, -50%);
+}
+&:nth-child(1) {
+&::before {
+    content: "\25B2";
+    margin-top: -1px;
+}
+}
+&:nth-child(2) {
+&::before {
+    content: "\25B6";
+    margin-left: 1px;
+}
+}
+&:nth-child(3) {
+&::before {
+    content: "\25BC";
+    margin-top: 1px;
+}
+}
+&:nth-child(4) {
+&::before {
+    content: "\25C0";
+    margin-left: -1px;
+}
+}
+}
+}
+&--right {
+top: 27px;
+left: 6px;
+}
+span {
+position: absolute;
+width: 14px;
+height: 14px;
+border-radius: 50%;
+background-color: #1b1b1b;
+border: 1px solid #101010;
+color: $colorWhite;
+font-size: 5px;
+text-align: center;
+font-family: sans-serif;
+line-height: 12px;
+text-transform: uppercase;
+&:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+&:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+&:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+&:nth-child(4) {
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+}
+}
+
+/*Screen*/
+
+.screen {
+position: absolute;
+left: 50%;
+width: 330px;
+height: 100%;
+top: 70%;
+transform: translate(-50%, 0);
+&__wrapper {
+position: relative;
+width: 100%;
+height: 100%;
+background-color: #1b1b1b;
+&::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 93%;
+    height: 91%;
+    background-color: #1f1f1f;
+    transform: translate(-50%, -50%);
+}
+}
+}
+
+/*Bilder von den Spielen*/
+.middle1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.card {
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    left: 115em;
+}
+.front, .back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 0.6s linear;
+}
+
+.front .movie {
+    height: 100%;
+}
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+.back {
+    background-color: $colorWhite;
+    transform: perspective(600px) rotateY(180deg);
+    cursor: text;
+}
+
+.back-content  h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    color: $colorBlack;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+    
+}
+.back-content p {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5%;
+    font-size: 15px;
+    margin: 2%;
+    color: $colorBlack;
+}
+
+.back-content a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 50%;
+    height: 45px;
+    margin-left: 25%;
+    background-color:$colorRed;
+    margin-top: 14%;
+    border-radius: 8px;
+}
+
+.card:hover > .front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+
+.middle2 {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.card2 {
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    left: 115em;
+}
+.front, .back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 0.6s linear;
+}
+
+.front .movie2 {
+    height: 100%;
+}
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+.back {
+    background: $colorWhite;
+    transform: perspective(600px) rotateY(180deg);
+    cursor: text;
+}
+.back-content2  h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    color: $colorBlack;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+    
+}
+.back-content2 p {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5%;
+    font-size: 15px;
+    margin: 2%;
+    color: $colorBlack;
+}
+.back-content2 a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 50%;
+    height: 45px;
+    margin-left: 25%;
+    background-color:$colorRed;
+    margin-top: 8%;
+    border-radius: 8px;
+}
+
+.card2:hover > .front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.card2:hover > .back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+
+.middle3 {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.card3 {
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    left: 115em;
+    }
+.front, .back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 0.6s linear;
+}
+
+.front .movie3 {
+    height: 100%;
+}
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+.back {
+    background: $colorWhite;
+    transform: perspective(600px) rotateY(180deg);
+    cursor: text;
+}
+
+.back-content3 h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    color: $colorBlack;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+    
+}
+.back-content3 p {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5%;
+    font-size: 14px;
+    margin: 1.75%;
+    color: $colorBlack;
+}
+
+.back-content3 a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 50%;
+    height: 45px;
+    margin-left: 25%;
+    background-color:$colorRed;
+    margin-top: 18%;
+    border-radius: 8px;
+}
+.card3:hover > .front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.card3:hover > .back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+
+/*Buttons*/
+.btn-photo,
+.btn-home {
+position: absolute;
+width: 10px;
+height: 10px;
+bottom: 48px;
+background-color: #1b1b1b;
+border: 1px solid #101010;
+}
+.btn-photo {
+right: 11px;
+}
+.btn-home {
+left: 12px;
+border-radius: 50%;
+}
+
+.btn-select,
+.btn-start {
+position: absolute;
+top: 18px;
+width: 10px;
+height: 2px;
+background-color: #1b1b1b;
+}
+
+.btn-select {
+right: 4px;
+}
+
+.btn-start {
+left: 4px;
+&::before {
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+width: 2px;
+height: 10px;
+background-color: #1b1b1b;
+transform: translate(-50%, -50%);
+}
+}
+
